@@ -1,24 +1,24 @@
 <?php
 	$data = new stdclass();
-	$data->strFind 		  = '';
-	$data->intFind 		  = null;
-	$data->strReplace	  = '';
-	$data->intReplaceFrom = null;
-	$data->intReplaceTo   = null;
-	$data->strSeparator   = '';
-	$data->strCode		  = '';
-	$data->arrResult	  = array();		
+	$data->strFind 		= '';
+	$data->intFind 		= null;
+	$data->strReplace	= '';
+	$data->intReplaceFrom	= null;
+	$data->intReplaceTo	= null;
+	$data->strSeparator	= '';
+	$data->strCode		= '';
+	$data->arrResult	= array();		
 
 	if(isset($_POST) && count($_POST) == 7) duplicate($data);
 
 	function duplicate(&$data){
-		$data->strFind 		  = (string)$_POST['strFind'];	 	
-		$data->intFind 		  = (int)$_POST['intFind'];
-		$data->strReplace	  = (string)$_POST['strReplace'];
-		$data->intReplaceFrom = (int)$_POST['intReplaceFrom'];
-		$data->intReplaceTo   = (int)$_POST['intReplaceTo'];
-		$data->strSeparator   = (string)$_POST['strSeparator'];
-		$data->strCode        = (string)$_POST['strCode'];
+		$data->strFind 		= (string)$_POST['strFind'];	 	
+		$data->intFind 		= (int)$_POST['intFind'];
+		$data->strReplace	= (string)$_POST['strReplace'];
+		$data->intReplaceFrom 	= (int)$_POST['intReplaceFrom'];
+		$data->intReplaceTo   	= (int)$_POST['intReplaceTo'];
+		$data->strSeparator   	= (string)$_POST['strSeparator'];
+		$data->strCode        	= (string)$_POST['strCode'];
 
 		for($i = $data->intReplaceFrom; $i <= $data->intReplaceTo ; $i++){
 			$data->arrResult[] = str_replace($data->strFind . $data->intFind, $data->strReplace . $i, $data->strCode);
@@ -140,15 +140,15 @@
 				</div>
 			</div>
 			<script type="text/javascript">
-			    $(window).on('load',function(){
-			        $('#duplicatorResult').modal('show');
-			    });
+				$(window).on('load',function(){
+					$('#duplicatorResult').modal('show');
+				});
 
-				function ToClipBoard() {
+				function ToClipBoard(){
 					document.getElementById("strResult").select();
 					document.execCommand("Copy");
 					alert("Result copied to clipboard");
-				}			    
+				};
 			</script>			
 			<?php } ?>
 		</div>

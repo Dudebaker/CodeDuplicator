@@ -84,7 +84,7 @@
 					<input type="text" class="form-control margin5" id="strFind" required autocomplete="on" placeholder="Hello" name="strFind" value="<?=$data->strFind;?>" onkeyup="$('#resultFindString').html(this.value + $('#intFind').val())">
 					<input type="text" class="form-control margin5" id="intFind" required autocomplete="on" placeholder="1" name="intFind" value="<?=$data->intFind;?>" onkeyup="$('#resultFindString').html($('#strFind').val() + this.value)">
 				</div>
-				<div class="form-group">
+				<div class="form-group full">
 					<span class="margin5 col1 right">Resulting find string:</span><span id="resultFindString" class="margin5"><?=$data->strFind . $data->intFind;?></span>
 				</div>
 				<div class="form-group">
